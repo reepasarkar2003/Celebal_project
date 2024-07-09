@@ -1,0 +1,17 @@
+{
+    "name": "USDataOutput",
+    "properties": {
+      "linkedServiceName": {
+        "referenceName": "BlobStorageService",
+        "type": "LinkedServiceReference"
+      },
+      "type": "AzureBlob",
+      "typeProperties": {
+        "filePath": "data/US.json",
+        "format": {
+          "type": "JsonFormat"
+        }
+      }
+    }
+  }
+  

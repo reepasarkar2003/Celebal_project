@@ -1,0 +1,10 @@
+{
+    "name": "SqlDbService",
+    "properties": {
+      "type": "AzureSqlDatabase",
+      "typeProperties": {
+        "connectionString": "your_connection_string_here"
+      }
+    }
+  }
+  

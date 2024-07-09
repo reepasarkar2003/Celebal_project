@@ -1,0 +1,27 @@
+{
+    "name": "TwiceDailyTrigger",
+    "properties": {
+      "type": "ScheduleTrigger",
+      "typeProperties": {
+        "recurrence": {
+          "frequency": "Day",
+          "interval": 1,
+          "startTime": "2023-01-01T00:00:00Z",
+          "timeZone": "India Standard Time",
+          "schedule": {
+            "hours": [0, 12],
+            "minutes": [0]
+          }
+        }
+      },
+      "pipelines": [
+        {
+          "pipelineReference": {
+            "referenceName": "FetchCountryDataPipeline",
+            "type": "PipelineReference"
+          }
+        }
+      ]
+    }
+  }
+  

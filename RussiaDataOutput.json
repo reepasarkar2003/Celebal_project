@@ -1,0 +1,17 @@
+{
+    "name": "RussiaDataOutput",
+    "properties": {
+      "linkedServiceName": {
+        "referenceName": "BlobStorageService",
+        "type": "LinkedServiceReference"
+      },
+      "type": "AzureBlob",
+      "typeProperties": {
+        "filePath": "data/Russia.json",
+        "format": {
+          "type": "JsonFormat"
+        }
+      }
+    }
+  }
+  

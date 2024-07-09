@@ -1,0 +1,184 @@
+{
+    "name": "FetchCountryDataPipeline",
+    "properties": {
+      "activities": [
+        {
+          "name": "FetchIndiaData",
+          "type": "Copy",
+          "inputs": [],
+          "outputs": [
+            {
+              "referenceName": "IndiaDataOutput",
+              "type": "DatasetReference"
+            }
+          ],
+          "typeProperties": {
+            "source": {
+              "type": "RestSource",
+              "httpRequestTimeout": "00:01:00"
+            },
+            "sink": {
+              "type": "JsonSink",
+              "storeSettings": {
+                "type": "AzureBlobStorageWriteSettings"
+              }
+            }
+          },
+          "linkedServiceName": {
+            "referenceName": "RestService",
+            "type": "LinkedServiceReference"
+          },
+          "policy": {
+            "timeout": "7.00:00:00",
+            "retry": 0,
+            "retryIntervalInSeconds": 30,
+            "secureOutput": false,
+            "secureInput": false
+          },
+          "dependsOn": []
+        },
+        {
+          "name": "FetchUSData",
+          "type": "Copy",
+          "inputs": [],
+          "outputs": [
+            {
+              "referenceName": "USDataOutput",
+              "type": "DatasetReference"
+            }
+          ],
+          "typeProperties": {
+            "source": {
+              "type": "RestSource",
+              "httpRequestTimeout": "00:01:00"
+            },
+            "sink": {
+              "type": "JsonSink",
+              "storeSettings": {
+                "type": "AzureBlobStorageWriteSettings"
+              }
+            }
+          },
+          "linkedServiceName": {
+            "referenceName": "RestService",
+            "type": "LinkedServiceReference"
+          },
+          "policy": {
+            "timeout": "7.00:00:00",
+            "retry": 0,
+            "retryIntervalInSeconds": 30,
+            "secureOutput": false,
+            "secureInput": false
+          },
+          "dependsOn": []
+        },
+        {
+          "name": "FetchUKData",
+          "type": "Copy",
+          "inputs": [],
+          "outputs": [
+            {
+              "referenceName": "UKDataOutput",
+              "type": "DatasetReference"
+            }
+          ],
+          "typeProperties": {
+            "source": {
+              "type": "RestSource",
+              "httpRequestTimeout": "00:01:00"
+            },
+            "sink": {
+              "type": "JsonSink",
+              "storeSettings": {
+                "type": "AzureBlobStorageWriteSettings"
+              }
+            }
+          },
+          "linkedServiceName": {
+            "referenceName": "RestService",
+            "type": "LinkedServiceReference"
+          },
+          "policy": {
+            "timeout": "7.00:00:00",
+            "retry": 0,
+            "retryIntervalInSeconds": 30,
+            "secureOutput": false,
+            "secureInput": false
+          },
+          "dependsOn": []
+        },
+        {
+          "name": "FetchChinaData",
+          "type": "Copy",
+          "inputs": [],
+          "outputs": [
+            {
+              "referenceName": "ChinaDataOutput",
+              "type": "DatasetReference"
+            }
+          ],
+          "typeProperties": {
+            "source": {
+              "type": "RestSource",
+              "httpRequestTimeout": "00:01:00"
+            },
+            "sink": {
+              "type": "JsonSink",
+              "storeSettings": {
+                "type": "AzureBlobStorageWriteSettings"
+              }
+            }
+          },
+          "linkedServiceName": {
+            "referenceName": "RestService",
+            "type": "LinkedServiceReference"
+          },
+          "policy": {
+            "timeout": "7.00:00:00",
+            "retry": 0,
+            "retryIntervalInSeconds": 30,
+            "secureOutput": false,
+            "secureInput": false
+          },
+          "dependsOn": []
+        },
+        {
+          "name": "FetchRussiaData",
+          "type": "Copy",
+          "inputs": [],
+          "outputs": [
+            {
+              "referenceName": "RussiaDataOutput",
+              "type": "DatasetReference"
+            }
+          ],
+          "typeProperties": {
+            "source": {
+              "type": "RestSource",
+              "httpRequestTimeout": "00:01:00"
+            },
+            "sink": {
+              "type": "JsonSink",
+              "storeSettings": {
+                "type": "AzureBlobStorageWriteSettings"
+              }
+            }
+          },
+          "linkedServiceName": {
+            "referenceName": "RestService",
+            "type": "LinkedServiceReference"
+          },
+          "policy": {
+            "timeout": "7.00:00:00",
+            "retry": 0,
+            "retryIntervalInSeconds": 30,
+            "secureOutput": false,
+            "secureInput": false
+          },
+          "dependsOn": []
+        }
+      ],
+      "parameters": {}
+    }
+  }
+  

@@ -1,0 +1,17 @@
+{
+    "name": "IndiaDataOutput",
+    "properties": {
+      "linkedServiceName": {
+        "referenceName": "BlobStorageService",
+        "type": "LinkedServiceReference"
+      },
+      "type": "AzureBlob",
+      "typeProperties": {
+        "filePath": "data/India.json",
+        "format": {
+          "type": "JsonFormat"
+        }
+      }
+    }
+  }
+  

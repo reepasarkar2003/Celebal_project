@@ -1,0 +1,17 @@
+{
+    "name": "ChinaDataOutput",
+    "properties": {
+      "linkedServiceName": {
+        "referenceName": "BlobStorageService",
+        "type": "LinkedServiceReference"
+      },
+      "type": "AzureBlob",
+      "typeProperties": {
+        "filePath": "data/China.json",
+        "format": {
+          "type": "JsonFormat"
+        }
+      }
+    }
+  }
+  

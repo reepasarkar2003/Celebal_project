@@ -1,0 +1,28 @@
+{
+    "name": "ProductDataPipeline",
+    "properties": {
+      "parameters": {
+        "CustomerCount": {
+          "type": "Int"
+        }
+      },
+      "activities": [
+        {
+          "name": "CopyProductData",
+          "type": "Copy",
+          "inputs": [],
+          "outputs": [],
+          "typeProperties": {
+            "source": {
+              "type": "AzureSqlSource",
+              "sqlReaderQuery": "SELECT * FROM Products"
+            },
+            "sink": {
+              "type": "AzureBlobStorageSink"
+            }
+          }
+        }
+      ]
+    }
+  }
+  

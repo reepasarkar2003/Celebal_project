@@ -1,0 +1,56 @@
+{
+    "name": "CustomerDataPipeline",
+    "properties": {
+      "activities": [
+        {
+          "name": "LookupCustomerCount",
+          "type": "Lookup",
+          "typeProperties": {
+            "source": {
+              "type": "AzureSqlSource",
+              "sqlReaderQuery": "SELECT COUNT(*) AS RecordCount FROM Customers"
+            }
+          }
+        },
+        {
+          "name": "IfCondition",
+          "type": "IfCondition",
+          "typeProperties": {
+            "expression": {
+              "value": "@greater(activity('LookupCustomerCount').output.firstRow.RecordCount, 500)"
+            },
+            "activities": [
+              {
+                "name": "CopyCustomerData",
+                "type": "Copy",
+                "inputs": [],
+                "outputs": [],
+                "typeProperties": {
+                  "source": {
+                    "type": "AzureSqlSource"
+                  },
+                  "sink": {
+                    "type": "AzureBlobStorageSink"
+                  }
+                }
+              },
+              {
+                "name": "ExecuteProductPipeline",
+                "type": "ExecutePipeline",
+                "typeProperties": {
+                  "pipeline": {
+                    "referenceName": "ProductDataPipeline",
+                    "type": "PipelineReference"
+                  },
+                  "parameters": {
+                    "CustomerCount": "@activity('LookupCustomerCount').output.firstRow.RecordCount"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+  

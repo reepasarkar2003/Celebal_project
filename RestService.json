@@ -1,0 +1,11 @@
+{
+    "name": "RestService",
+    "properties": {
+      "type": "HttpServer",
+      "typeProperties": {
+        "url": "https://restcountries.com/v3.1/name",
+        "enableServerCertificateValidation": true
+      }
+    }
+  }
+  

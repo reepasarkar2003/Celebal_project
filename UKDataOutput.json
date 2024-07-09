@@ -1,0 +1,17 @@
+{
+    "name": "UKDataOutput",
+    "properties": {
+      "linkedServiceName": {
+        "referenceName": "BlobStorageService",
+        "type": "LinkedServiceReference"
+      },
+      "type": "AzureBlob",
+      "typeProperties": {
+        "filePath": "data/UK.json",
+        "format": {
+          "type": "JsonFormat"
+        }
+      }
+    }
+  }
+  
